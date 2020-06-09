@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pet_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-T8-ebJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zas-2G-ey4">
+                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="f25-jN-2br">
+                                        <connections>
+                                            <action selector="tackPicture" destination="BYZ-38-t0r" id="gvO-iW-3Hy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wuk-f4-gok"/>
+                                </items>
+                            </toolbar>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-pB-LqY">
+                                <rect key="frame" x="0.0" y="797.5" width="414" height="49.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ooW-tH-fBd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wE-aa-UVI">
+                                            <rect key="frame" x="16" y="16" width="382" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1wE-aa-UVI" firstAttribute="leading" secondItem="ooW-tH-fBd" secondAttribute="leading" constant="16" id="WCv-XV-RY9"/>
+                                        <constraint firstAttribute="bottom" secondItem="1wE-aa-UVI" secondAttribute="bottom" constant="16" id="bOs-Kw-HCD"/>
+                                        <constraint firstAttribute="trailing" secondItem="1wE-aa-UVI" secondAttribute="trailing" constant="16" id="kNW-d8-bh4"/>
+                                        <constraint firstItem="1wE-aa-UVI" firstAttribute="top" secondItem="ooW-tH-fBd" secondAttribute="top" constant="16" id="lCn-lk-m1w"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1jC-T8-ebJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7ol-62-UjP"/>
+                            <constraint firstItem="zas-2G-ey4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QH4-yn-3oO"/>
+                            <constraint firstItem="zas-2G-ey4" firstAttribute="top" secondItem="ZcW-pB-LqY" secondAttribute="bottom" id="SP9-dd-jna"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZcW-pB-LqY" secondAttribute="trailing" id="be1-Qr-P6B"/>
+                            <constraint firstAttribute="bottom" secondItem="1jC-T8-ebJ" secondAttribute="bottom" id="eqV-C3-sat"/>
+                            <constraint firstItem="zas-2G-ey4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gF6-Wv-ust"/>
+                            <constraint firstItem="ZcW-pB-LqY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oKq-2A-fo1"/>
+                            <constraint firstAttribute="trailing" secondItem="1jC-T8-ebJ" secondAttribute="trailing" id="oNl-Vk-z1J"/>
+                            <constraint firstItem="1jC-T8-ebJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rla-dv-s5Z"/>
+                            <constraint firstAttribute="bottom" secondItem="zas-2G-ey4" secondAttribute="bottom" id="y64-G1-DOD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="classificationLabel" destination="1wE-aa-UVI" id="4Wu-Px-LbE"/>
+                        <outlet property="imageView" destination="1jC-T8-ebJ" id="Q8a-wl-VBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+    </scenes>
+</document>
