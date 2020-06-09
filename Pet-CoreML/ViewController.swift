@@ -12,6 +12,7 @@ import CoreML
 class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var clipedImageView: UIImageView!
     @IBOutlet weak var classificationLabel: UILabel!
     
     var model: PetClassifier!
@@ -39,7 +40,10 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
+        }
+        imageView.image = image
      
         // Clip image to 299 * 299
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 299, height: 299), true, 2.0)
@@ -78,7 +82,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         newImage.draw(in: CGRect(x: 0, y: 0, width: newImage.size.width, height: newImage.size.height))
         UIGraphicsPopContext()
         CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue:0))
-        imageView.image = newImage
+        clipedImageView.image = newImage
         
         guard let prediction = try? model.prediction(image: pixelBuffer!) else { return }
     

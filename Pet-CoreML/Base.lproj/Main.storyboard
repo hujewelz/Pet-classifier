@@ -30,9 +30,9 @@
                                 </items>
                             </toolbar>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-pB-LqY">
-                                <rect key="frame" x="0.0" y="797.5" width="414" height="49.5"/>
+                                <rect key="frame" x="0.0" y="797" width="414" height="50"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ooW-tH-fBd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose a picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wE-aa-UVI">
@@ -50,10 +50,23 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbI-PT-6zk">
+                                <rect key="frame" x="306" y="689" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="46x-rs-l1a"/>
+                                    <constraint firstAttribute="height" constant="100" id="vN5-XN-JBn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1jC-T8-ebJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7ol-62-UjP"/>
+                            <constraint firstAttribute="trailing" secondItem="zbI-PT-6zk" secondAttribute="trailing" constant="8" id="K5r-fl-7ch"/>
                             <constraint firstItem="zas-2G-ey4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QH4-yn-3oO"/>
                             <constraint firstItem="zas-2G-ey4" firstAttribute="top" secondItem="ZcW-pB-LqY" secondAttribute="bottom" id="SP9-dd-jna"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZcW-pB-LqY" secondAttribute="trailing" id="be1-Qr-P6B"/>
@@ -62,12 +75,14 @@
                             <constraint firstItem="ZcW-pB-LqY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oKq-2A-fo1"/>
                             <constraint firstAttribute="trailing" secondItem="1jC-T8-ebJ" secondAttribute="trailing" id="oNl-Vk-z1J"/>
                             <constraint firstItem="1jC-T8-ebJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rla-dv-s5Z"/>
+                            <constraint firstItem="ZcW-pB-LqY" firstAttribute="top" secondItem="zbI-PT-6zk" secondAttribute="bottom" constant="8" id="ryY-uw-pku"/>
                             <constraint firstAttribute="bottom" secondItem="zas-2G-ey4" secondAttribute="bottom" id="y64-G1-DOD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="classificationLabel" destination="1wE-aa-UVI" id="4Wu-Px-LbE"/>
+                        <outlet property="clipedImageView" destination="zbI-PT-6zk" id="OMG-wm-cIL"/>
                         <outlet property="imageView" destination="1jC-T8-ebJ" id="Q8a-wl-VBa"/>
                     </connections>
                 </viewController>
